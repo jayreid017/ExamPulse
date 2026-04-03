@@ -1,7 +1,13 @@
 <script setup lang="ts">
-import HelloWorld from './components/HelloWorld.vue'
+import Navbar from "./components/Navbar.vue";
 </script>
 
 <template>
-  <HelloWorld />
+  <div class="min-h-screen w-full flex flex-col bg-jb-dirtywhite">
+    <Navbar />
+    <!-- Router View now spans full width. Individual pages can use class="page-container" to constrain width -->
+    <main class="grow w-full flex flex-col">
+      <router-view />
+    </main>
+  </div>
 </template>
