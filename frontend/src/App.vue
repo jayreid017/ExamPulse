@@ -4,7 +4,7 @@ import Navbar from "./components/Navbar.vue";
 
 <template>
   <div class="min-h-screen w-full flex flex-col bg-jb-dirtywhite">
-    <Navbar />
+    <Navbar v-if="!$route.meta.hideNavbar" />
     <!-- Router View now spans full width. Individual pages can use class="page-container" to constrain width -->
     <main class="grow w-full flex flex-col">
       <router-view />

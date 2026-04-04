@@ -85,9 +85,11 @@ const animateMenuOut = () => {
 
             <!-- Desktop Sign In -->
             <div class="hidden md:flex items-center justify-end">
-                <button class="text-white bg-red-400 px-6 py-2 rounded-lg font-merriweather text-sm hover:bg-red-500 transition-colors shadow-md shadow-red-500/20">
-                    Sign in
-                </button>
+                <router-link to="/login">
+                    <button class="text-white bg-red-400 px-6 py-2 rounded-lg font-merriweather text-sm hover:bg-red-500 transition-colors shadow-md shadow-red-500/20">
+                        Sign in
+                    </button>
+                </router-link>
             </div>
 
             <!-- Mobile Menu Toggle Button -->
