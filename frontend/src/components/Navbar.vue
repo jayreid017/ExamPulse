@@ -2,7 +2,7 @@
 import { ref, watch, nextTick } from 'vue';
 import { Icon } from '@iconify/vue';
 import gsap from 'gsap';
-import ExamPulse from "../assets/ExamPulse_Logo.png";
+import ExamPulse from "../assets/img/ExamPulse_Logo.png";
 
 const isMenuOpen = ref(false);
 const menuRef = ref<HTMLElement | null>(null);

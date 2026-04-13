@@ -2,9 +2,20 @@
 import { ref, onMounted } from 'vue';
 import api from '../../api';
 
-const users = ref<any[]>([]);
+
 const loading = ref(true);
 const error = ref<string | null>(null);
+
+interface User {
+    id: string;
+    email: string;
+    role: string;
+    name: string;
+    created_at: string;
+    
+}
+
+const users = ref<User[]>([]);
 
 onMounted(async () => {
     try {
@@ -18,6 +29,9 @@ onMounted(async () => {
         loading.value = false;
     }
 });
+const formatDate = (date: string) => {
+  return new Date(date).toLocaleString();
+};
 </script>
 
 <template>
@@ -40,15 +54,19 @@ onMounted(async () => {
                 <table class="min-w-full divide-y divide-gray-200">
                     <thead class="bg-gray-50">
                         <tr>
-                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">User Details</th>
+                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Email</th>
+                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Role</th>
+                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Name</th>
+                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Created At</th>
                         </tr>
                     </thead>
                     <tbody class="bg-white divide-y divide-gray-200">
-                        <tr v-for="(user, index) in users" :key="user.id || index" class="hover:bg-gray-50 transition-colors">
-                            <td class="px-6 py-4 text-sm text-gray-900">
-                                <pre class="text-xs bg-gray-50 p-3 rounded border border-gray-100 max-w-full overflow-x-auto">{{ JSON.stringify(user, null, 2) }}</pre>
-                            </td>
-                        </tr>
+                      <tr v-for="user in users" :key="user.id">
+                        <td>{{ user.email }}</td>
+                        <td>{{ user.role }}</td>
+                        <td>{{ user.name }}</td>
+                        <td>{{ formatDate(user.created_at) }}</td>
+                      </tr>
                         <tr v-if="users.length === 0">
                             <td class="px-6 py-8 text-center text-gray-500">No students found.</td>
                         </tr>

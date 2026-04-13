@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { Icon } from '@iconify/vue';
-import school from '../../assets/happykid.jpg';
+import school from '../../assets/img/happykid.jpg';
 </script>
 
 <template>

@@ -2,7 +2,7 @@
 
 import { Icon } from '@iconify/vue';
 import { useRoute } from 'vue-router';
-import ExamPulse from "../assets/ExamPulse_Logo.png";
+import ExamPulse from "../assets/img/ExamPulse_Logo.png";
 
 const route = useRoute();
 

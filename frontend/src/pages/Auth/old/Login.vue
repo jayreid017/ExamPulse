@@ -3,7 +3,7 @@ import { ref } from 'vue';
 import { useRouter } from 'vue-router';
 import { Icon } from '@iconify/vue';
 
-import api from '../../api';
+import api from '../../../api'; 
 
 
 

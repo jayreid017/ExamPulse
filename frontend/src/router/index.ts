@@ -8,8 +8,8 @@ import TeacherSchedule from '../pages/Teacher/Schedule.vue'
 import TeacherMessages from '../pages/Teacher/Messages.vue'
 import TeacherSettings from '../pages/Teacher/Settings.vue'
 import TeacherCreate from '../pages/Teacher/Create.vue'
-import Login from '../pages/Auth/Login.vue'
-import Register from '../pages/Auth/Register.vue'
+import Login from '../pages/Auth/LoginForm.vue'
+import Register from '../pages/Auth/RegisterForm.vue'
 
 const routes = [
   {

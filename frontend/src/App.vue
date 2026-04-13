@@ -1,13 +1,16 @@
 <script setup lang="ts">
 import Navbar from "./components/Navbar.vue";
+import AppNotification from "./components/AppNotification.vue";
 </script>
 
 <template>
-  <div class="min-h-screen w-full flex flex-col bg-jb-dirtywhite">
+  <div class="min-h-screen flex flex-col bg-jb-dirtywhite">
     <Navbar v-if="!$route.meta.hideNavbar" />
-    <!-- Router View now spans full width. Individual pages can use class="page-container" to constrain width -->
-    <main class="grow w-full flex flex-col">
+
+    <main class="grow flex flex-col">
       <router-view />
     </main>
+
+    <AppNotification />
   </div>
 </template>
