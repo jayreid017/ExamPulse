@@ -2,8 +2,10 @@
 
 @theme {
   /* This creates the 'font-magilio' utility class */
-  --font-magilio: "Magilio", ui-sans-serif, system-ui;
-  --font-merriweather: "Merriweather", ui-sans-serif, system-ui;
+  --font-text1: "Magilio", ui-sans-serif, system-ui;
+  --font-text2: "Merriweather", ui-sans-serif, system-ui;
+  --color-primary:#5F9561;
+  --color-secondary:#99ff99;
 }
 
 @layer base {

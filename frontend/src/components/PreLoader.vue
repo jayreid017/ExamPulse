@@ -8,7 +8,7 @@
         ref="textEl" 
         class="text-[clamp(2rem,5vw,5rem)] font-bold uppercase tracking-widest text-center"
       >
-        Loading
+        ExamPulse
       </div>
       
       <!-- Red sweep animation element -->

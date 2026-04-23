@@ -56,18 +56,20 @@ const animateMenuOut = () => {
 </script>
 
 <template>
-    <nav class="w-full h-20 bg-jb-dirtywhite/80 backdrop-blur-md sticky top-0 z-50 border-b border-black/5">
+    <nav class="w-full h-20 bg-jb-dirtywhite/80 backdrop-blur-md sticky top-0 z-50">
         <div class="w-full h-full flex items-center justify-between px-6 lg:px-8">
             <!-- Logo Section -->
             <div class="flex items-center">
                 <router-link to="/#home" @click="closeMenu" class="flex items-center">
-                    <img :src="ExamPulse" alt="Logo" class="w-12 h-12">
+                   <h1 class="text-2xl font-magilio font-bold text-red-500/70 leading-tight">
+                      ExamPulse
+                   </h1>
                 </router-link>
             </div>
 
             <!-- Desktop Navigation -->
-            <div class="hidden md:flex flex-1 items-center justify-center">
-                <ul class="flex items-center gap-8 font-merriweather text-sm">
+            <div class="hidden md:flex flex-1 items-end justify-end">
+                <ul class="flex items-center gap-8 font-merriweather text-xs uppercase">
                     <li class="text-gray-600 hover:text-red-400 transition-colors">
                         <router-link to="/#home">Home</router-link>
                     </li>
@@ -83,14 +85,7 @@ const animateMenuOut = () => {
                 </ul>
             </div>
 
-            <!-- Desktop Sign In -->
-            <div class="hidden md:flex items-center justify-end">
-                <router-link to="/login">
-                    <button class="text-white bg-red-400 px-6 py-2 rounded-lg font-merriweather text-sm hover:bg-red-500 transition-colors shadow-md shadow-red-500/20">
-                        Sign in
-                    </button>
-                </router-link>
-            </div>
+        
 
             <!-- Mobile Menu Toggle Button -->
             <div class="md:hidden flex items-center z-50">
