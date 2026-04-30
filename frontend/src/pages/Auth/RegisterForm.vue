@@ -1,7 +1,5 @@
 <script setup lang="ts">
 import { reactive, ref, computed } from "vue";
-import BgAuth from "../../assets/img/bg-auth.png";
-import CardBg from "../../assets/img/iccardbg.jpg";
 import api from "../../api";
 import { Icon } from "@iconify/vue";
 import { useRouter } from "vue-router";
@@ -105,7 +103,6 @@ function clearError(field?: keyof RegisterForm) {
     <!-- Left: Decorative Side -->
     <div
       class="hidden lg:flex lg:w-1/3 xl:w-2/5 relative overflow-hidden items-center justify-center bg-cover bg-center bg-no-repeat"
-      :style="{ backgroundImage: `linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), url(${BgAuth})` }"
     >
       <!-- Decorative blobs -->
       <div class="absolute top-10 left-10 w-72 h-72 bg-red-600 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob"></div>
@@ -159,7 +156,7 @@ function clearError(field?: keyof RegisterForm) {
       <!-- ID Badge Card -->
       <form
         class="w-full max-w-[350px] rounded-2xl overflow-hidden shadow-xl bg-cover bg-center bg-no-repeat"
-        :style="{ backgroundImage: `linear-gradient(rgba(0,0,0,0.15), rgba(0,0,0,0.15)), url(${CardBg})` }"
+
         novalidate
         @submit.prevent="handleRegister"
       >
