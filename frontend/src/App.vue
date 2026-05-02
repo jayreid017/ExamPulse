@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { ref } from 'vue';
-import Navbar from "./components/Navbar.vue";
 import AppNotification from "./components/AppNotification.vue";
 import PreLoader from "./components/PreLoader.vue";
 

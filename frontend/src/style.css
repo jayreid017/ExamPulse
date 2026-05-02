@@ -1,39 +1,238 @@
 @import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
 
 @theme {
-  /* This creates the 'font-magilio' utility class */
-  --font-text1: "Magilio", ui-sans-serif, system-ui;
-  --font-text2: "Merriweather", ui-sans-serif, system-ui;
-  --color-primary:#5F9561;
-  --color-secondary:#99ff99;
+  --font-text1: "DMSans", ui-sans-serif, system-ui;
+  --font-text2: "PlayfairDisplay", ui-sans-serif, system-ui;
+  --font-text3: "PlayfairDisplay-ExtraBold", ui-sans-serif, system-ui;
+  --color-primary: #3d8c5e;
+  --color-secondary: #c8f0d8;
 }
 
 @layer base {
-
   @font-face {
-    font-family: "Magilio";
-    /* Points to the file in your public folder */
-    src: url("/fonts/Magilio.ttf") format("truetype");
+    font-family: "DMSans";
+    src: url("/fonts/DMSans-VariableFont_opsz,wdth,wght.ttf") format("truetype");
     font-weight: normal;
     font-style: normal;
     font-display: swap;
   }
 
   @font-face {
-    font-family: "Merriweather";
-    /* Points to the file in your public folder */
-    src: url("/fonts/Merriweather-VariableFont_opsz,wdth,wght.ttf") format("truetype");
+    font-family: "PlayfairDisplay";
+    src: url("/fonts/PlayfairDisplay-VariableFont_wght.ttf") format("truetype");
     font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "PlayfairDisplay";
+    src: url("/fonts/PlayfairDisplay-ExtraBold.ttf") format("truetype");
+    font-weight: 900;
     font-style: normal;
     font-display: swap;
   }
 }
 
 @layer components {
-  /* Reusable container class for standard page margins and layout */
   .page-container {
     @apply w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
   }
 }
 
+/* ─────────────────────────────────────────────────
+   EXAMCRAFT PALETTE
+───────────────────────────────────────────────── */
+:root {
+  /* 🌿 Core Green */
+  --mint:       #c8f0d8;
+  --sage:       #a8d8b9;
+  --green:      #6dbb8a;
+  --deep-green: #3d8c5e;
+  --cream:      #f5fdf7;
+  --soft-white: #edfaf2;
 
+  /* 🌸 Accents */
+  --lilac: #e4d9f7;
+  --blush: #fde8f0;
+  --sky:   #d6eeff;
+  --lemon: #fdf9d6;
+
+  /* 🖋 Text */
+  --text-dark:  #2c4a38;
+  --text-mid:   #4a7060;
+  --text-light: #86a898;
+}
+
+/* ─────────────────────────────────────────────────
+   LIGHT MODE — shadcn tokens
+───────────────────────────────────────────────── */
+:root {
+  --radius: 0.625rem;
+
+  /* Page */
+  --background:    #f5fdf7;   /* --cream */
+  --foreground:    #2c4a38;   /* --text-dark */
+
+  /* Cards & popovers */
+  --card:               #ffffff;
+  --card-foreground:    #2c4a38;
+  --popover:            #ffffff;
+  --popover-foreground: #2c4a38;
+
+  /* Brand — primary = deep green, used for buttons/links */
+  --primary:            #3d8c5e;
+  --primary-foreground: #ffffff;
+
+  /* Secondary — mint, used for subtle highlights */
+  --secondary:            #c8f0d8;
+  --secondary-foreground: #2c4a38;
+
+  /* Accent — sage, used for hover states */
+  --accent:            #a8d8b9;
+  --accent-foreground: #2c4a38;
+
+  /* Muted — soft-white surface + mid text */
+  --muted:            #edfaf2;
+  --muted-foreground: #4a7060;
+
+  /* Destructive */
+  --destructive:            #e05555;
+  --destructive-foreground: #ffffff;
+
+  /* UI chrome */
+  --border: #a8d8b9;   /* --sage */
+  --input:  #a8d8b9;   /* --sage */
+  --ring:   #6dbb8a;   /* --green */
+
+  /* Charts — full pastel set */
+  --chart-1: #6dbb8a;   /* green  */
+  --chart-2: #e4d9f7;   /* lilac  */
+  --chart-3: #fde8f0;   /* blush  */
+  --chart-4: #d6eeff;   /* sky    */
+  --chart-5: #fdf9d6;   /* lemon  */
+
+  /* Sidebar */
+  --sidebar:                   #edfaf2;
+  --sidebar-foreground:        #2c4a38;
+  --sidebar-primary:           #3d8c5e;
+  --sidebar-primary-foreground:#ffffff;
+  --sidebar-accent:            #c8f0d8;
+  --sidebar-accent-foreground: #2c4a38;
+  --sidebar-border:            #a8d8b9;
+  --sidebar-ring:              #6dbb8a;
+}
+
+/* ─────────────────────────────────────────────────
+   DARK MODE — lighter forest green palette
+───────────────────────────────────────────────── */
+.dark {
+  /* Page */
+  --background: #1e3228;
+  --foreground: #e0f5ea;
+
+  /* Cards & popovers */
+  --card:               #243d2e;
+  --card-foreground:    #e0f5ea;
+  --popover:            #243d2e;
+  --popover-foreground: #e0f5ea;
+
+  /* Brand — brighter green so it pops on dark bg */
+  --primary:            #72c990;
+  --primary-foreground: #1e3228;
+
+  /* Secondary */
+  --secondary:            #2a5038;
+  --secondary-foreground: #e0f5ea;
+
+  /* Accent */
+  --accent:            #4a9068;
+  --accent-foreground: #e0f5ea;
+
+  /* Muted */
+  --muted:            #253d2f;
+  --muted-foreground: #a8d8bc;
+
+  /* Destructive */
+  --destructive:            #f07070;
+  --destructive-foreground: #1e3228;
+
+  /* UI chrome */
+  --border: #4a9068;
+  --input:  #4a9068;
+  --ring:   #72c990;
+
+  /* Charts */
+  --chart-1: #72c990;
+  --chart-2: #5a4a80;
+  --chart-3: #7a3858;
+  --chart-4: #2a5070;
+  --chart-5: #585010;
+
+  /* Sidebar */
+  --sidebar:                   #253d2f;
+  --sidebar-foreground:        #e0f5ea;
+  --sidebar-primary:           #72c990;
+  --sidebar-primary-foreground:#1e3228;
+  --sidebar-accent:            #2a5038;
+  --sidebar-accent-foreground: #e0f5ea;
+  --sidebar-border:            #4a9068;
+  --sidebar-ring:              #72c990;
+}
+
+/* ─────────────────────────────────────────────────
+   THEME INLINE MAP  (Tailwind v4 @theme inline)
+───────────────────────────────────────────────── */
+@theme {
+  --color-background:              var(--background);
+  --color-foreground:              var(--foreground);
+  --color-card:                    var(--card);
+  --color-card-foreground:         var(--card-foreground);
+  --color-popover:                 var(--popover);
+  --color-popover-foreground:      var(--popover-foreground);
+  --color-primary:                 var(--primary);
+  --color-primary-foreground:      var(--primary-foreground);
+  --color-secondary:               var(--secondary);
+  --color-secondary-foreground:    var(--secondary-foreground);
+  --color-muted:                   var(--muted);
+  --color-muted-foreground:        var(--muted-foreground);
+  --color-accent:                  var(--accent);
+  --color-accent-foreground:       var(--accent-foreground);
+  --color-destructive:             var(--destructive);
+  --color-destructive-foreground:  var(--destructive-foreground);
+  --color-border:                  var(--border);
+  --color-input:                   var(--input);
+  --color-ring:                    var(--ring);
+  --color-chart-1:                 var(--chart-1);
+  --color-chart-2:                 var(--chart-2);
+  --color-chart-3:                 var(--chart-3);
+  --color-chart-4:                 var(--chart-4);
+  --color-chart-5:                 var(--chart-5);
+  --radius-sm:                     calc(var(--radius) - 4px);
+  --radius-md:                     calc(var(--radius) - 2px);
+  --radius-lg:                     var(--radius);
+  --radius-xl:                     calc(var(--radius) + 4px);
+  --color-sidebar:                 var(--sidebar);
+  --color-sidebar-foreground:      var(--sidebar-foreground);
+  --color-sidebar-primary:         var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent:          var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border:          var(--sidebar-border);
+  --color-sidebar-ring:            var(--sidebar-ring);
+}
+
+/* ─────────────────────────────────────────────────
+   BASE RESETS
+───────────────────────────────────────────────── */
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}

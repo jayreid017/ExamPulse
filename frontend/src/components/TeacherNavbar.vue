@@ -2,7 +2,7 @@
 
 import { Icon } from '@iconify/vue';
 import { useRoute } from 'vue-router';
-import ExamPulse from "../assets/img/ExamPulse_Logo.png";
+
 
 const route = useRoute();
 
@@ -30,7 +30,7 @@ const isActive = (path: string) => {
         <!-- Top: Logo -->
         <div class="mb-8">
             <router-link to="/teacher/dashboard" class="block p-2 rounded-xl hover:bg-gray-50 transition-colors">
-                <img :src="ExamPulse" alt="Logo" class="w-16 h-16 object-contain">
+             
             </router-link>
         </div>
 

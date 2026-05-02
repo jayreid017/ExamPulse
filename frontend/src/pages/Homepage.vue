@@ -2,18 +2,19 @@
 import HeroSection from '../components/homepage/HeroSection.vue';
 import OverviewSection from '../components/homepage/OverviewSection.vue';
 import FeaturesSection from '../components/homepage/FeaturesSection.vue';
-import ChatSection from '../components/homepage/ChatSection.vue';
 import ContactSection from '../components/homepage/ContactSection.vue';
 import FooterSection from '../components/homepage/FooterSection.vue';
+import Navbar from '../components/Navbar.vue';
 </script>
 
 <template>
-  <HeroSection id="home" />
-  <OverviewSection id="about" />
-  <FeaturesSection id="features" />
-  <ChatSection />
+  <Navbar/>
+  <HeroSection id="home" data-nav-theme="dark" />
+  <OverviewSection id="about" data-nav-theme="dark" />
+  <FeaturesSection id="features" data-nav-theme="light" />
+  <ChatSection data-nav-theme="light" />
 
-  <ContactSection id="contact" />
-  <FooterSection />
+  <ContactSection id="contact" data-nav-theme="light" />
+  <FooterSection data-nav-theme="dark" />
 </template>
 

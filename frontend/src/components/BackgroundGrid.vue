@@ -20,7 +20,7 @@ onMounted(() => {
 </script>
 
 <template>
-    <div class="relative min-h-screen bg-linear-to-br from-primary to-[#213823] overflow-auto">
+    <div class="relative min-h-screen bg-linear-to-br from-primary to-[#213823] overflow-hidden">
         <!-- grid lines -->
         <div class="absolute inset-0 bg-[linear-gradient(90deg,rgba(144,238,144,0.1)_1px,transparent_1px)] bg-size-[210px_200px]"></div>
         <!-- light beam -->
