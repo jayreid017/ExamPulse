@@ -111,11 +111,11 @@ onMounted(() => {
                         v-for="card in cards"
                         :key="card.title"
                     >
-                        <div class="group h-[160px] w-[300px] [perspective:1000px] hero-card" :style="{ transform: `translateX(${card.offset}px)` }">
-                            <div class="relative h-full w-full transition-all duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
+                        <div class="group h-[160px] w-[300px] perspective-[1000px] hero-card" :style="{ transform: `translateX(${card.offset}px)` }">
+                            <div class="relative h-full w-full transition-all duration-700 transform-3d group-hover:rotate-y-180">
                                 <!-- Front Face -->
                                 <div 
-                                    :class="['absolute inset-0 border border-black/5 rounded-2xl p-4 shadow-xl [backface-visibility:hidden]', cardBgClass[card.tagColor]]"
+                                    :class="['absolute inset-0 border border-black/5 rounded-2xl p-4 shadow-xl backface-hidden', cardBgClass[card.tagColor]]"
                                     :style="{ boxShadow: glowClass[card.tagColor] }"
                                 >
                                     <!-- Tag -->
@@ -137,7 +137,7 @@ onMounted(() => {
 
                                 <!-- Back Face -->
                                 <div 
-                                    :class="['absolute inset-0 border border-black/5 rounded-2xl p-5 shadow-xl [transform:rotateY(180deg)] [backface-visibility:hidden] flex flex-col justify-between items-center text-center', cardBgClass[card.tagColor]]"
+                                    :class="['absolute inset-0 border border-black/5 rounded-2xl p-5 shadow-xl rotate-y-180 backface-hidden flex flex-col justify-between items-center text-center', cardBgClass[card.tagColor]]"
                                     :style="{ boxShadow: glowClass[card.tagColor] }"
                                 >
                                     <div class="flex-1 flex flex-col justify-center">

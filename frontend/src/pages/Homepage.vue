@@ -10,7 +10,7 @@ import Navbar from '../components/Navbar.vue';
 <template>
   <Navbar/>
   <HeroSection id="home" data-nav-theme="dark" />
-  <OverviewSection id="about" data-nav-theme="dark" />
+  <OverviewSection id="about" data-nav-theme="light" />
   <FeaturesSection id="features" data-nav-theme="light" />
   <ChatSection data-nav-theme="light" />
 
